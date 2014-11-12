@@ -1,0 +1,43 @@
+= form_for @thesis do |f|
+  - if @thesis.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@thesis.errors.count, "error")} prohibited this thesis from being saved:"
+      %ul
+        - @thesis.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.fields_for :author do |fa|
+      .field
+        = fa.label :firstname
+        = fa.text_field :firstname
+      .field
+        = fa.label :surname
+        = fa.text_field :surname
+  .field
+    = f.label :abstract
+    = f.text_area :abstract
+  .field
+    = f.label :language
+    = f.text_field :language
+  .field
+    = f.label :defended
+    = f.date_select :defended
+  .field
+<<<<<<< HEAD
+    = f.fields_for :form_author do |fa|
+      .field
+        = fa.label :firstname
+        = fa.text_field :firstname
+      .field
+        = fa.label :surname
+        = fa.text_field :surname
+=======
+    = f.label :faculty
+    = f.select :faculty_id, faculties
+>>>>>>> upstream/master
+  .actions
+    = f.submit 'Save'

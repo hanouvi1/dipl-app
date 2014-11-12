@@ -1,6 +1,6 @@
 class ThesesController < ApplicationController
   before_action :set_thesis, only: [:show, :edit, :update, :destroy]
-  x
+
   # GET /theses
   # GET /theses.json
   def index
