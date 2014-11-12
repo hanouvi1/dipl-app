@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+=======
+  devise_for :users
+  resources :faculties
+
+>>>>>>> upstream/master
   resources :authors
 
   resources :theses
